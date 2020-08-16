@@ -16,14 +16,14 @@ enableRobotsTXT = true
 [params]
 title = "I'm Marco Lee"
 author = "Marco Lee"
-description = "記錄一種業餘和隨性的興緻，也像是一項一項的挑戰"
+description = "記錄一種業餘和隨性的興緻，也像是一項項的挑戰"
 profilePicture = "images/profile.jpg"
 keywords = "blockchain, hugo"
 favicon = "favicons/"
 customCss = []
 customJs = []
-mainSections = ["post"]
-images = ["images/site-feature-image.png"]
+mainSections = ["posts"]
+images = ["images/site-feature.png"]
 
 ## Math settings
 [params.math]
@@ -65,7 +65,7 @@ url = "mailto:marcolinking@gmail.com"
   name = "Posts"
   weight = 200
   identifier = "posts"
-  url = "/post/"
+  url = "/posts/"
 
   [[menu.main]]
   name = "About"
