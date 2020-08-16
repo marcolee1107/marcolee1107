@@ -16,7 +16,7 @@ tags: ["Hugo", "Hugo Themes", "Homebrew", "GitHub"]
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
-[^1]: Homebrew 官方網站網址如右：<https://brew.sh/>.
+[^1]: Homebrew 官方網站網址如右：<https://brew.sh/>。
 
 #### 2. 安裝 Hugo
 直接下達指令安裝 Hugo。Hugo 有完整詳細的說明文件，有時間再來仔細<cite>瞧瞧[^2]</cite>。
@@ -24,16 +24,16 @@ tags: ["Hugo", "Hugo Themes", "Homebrew", "GitHub"]
 ```sh
 $ brew install hugo
 ```
-[^2]: Hugo 官方網站網址如右：<https://gohugo.io/>.
+[^2]: Hugo 官方網站網址如右：<https://gohugo.io/>。
 
 #### 3. 建立新網站
 下達指令建立新網站，並指定網站名稱。與網站同名的資料夾為部落格網站的根目錄。切換到資料夾內，等待下一步的處理步驟。
 
 ```sh
-$ hugo new site marcolee1107
-$ cd marcolee1107
+$ hugo new site website-hugo
+$ cd website-hugo
 ```
->我的新網站名稱採用和 GitHub 帳戶相同的名稱。你不一定得這麼做，可以替換成任意名稱。進入同名的新資料夾，觀察一下內部資料夾結構。
+>我的新網站名稱採用和 GitHub 帳戶相同的名稱。你不一定得這麼做，可以替換成任意名稱。進入新網站同名的新資料夾，觀察一下內部資料夾結構。
 
 現在的資料夾結構應如下所示：
 ```
@@ -60,7 +60,7 @@ $ git clone https://github.com/spf13/hyde.git themes/hyde
 theme = "hyde"
 ```
 再將 /themes/hyde 中的 static 和 layouts 資料夾複製到根目錄，取代原來的 static 和 layouts 資料夾。
->在本文最後，我會再記錄如何更換另一個佈景主題，也就是更換為目前使用的佈景主題。
+>稍後，我會再記錄如何更換另一個佈景主題，也就是更換為目前使用的佈景主題。
 
 ##### Hyde 佈景主題外觀如下。圖片連結自 <https://themes.gohugo.io/hyde/>。此頁面有詳細的介紹及使用說明。
 ![Themes](https://f.cloud.github.com/assets/98681/1831229/42b0b354-7384-11e3-8462-31b8df193fe5.png "Hugo Themes,Hyde")
@@ -91,6 +91,10 @@ draft: false
 ---
 ```
 
+>Hugo 頁面使用 <cite>Markdown[^3]</cite> 語言編輯，我需要再花點時間了解其語法，並找尋適當的編輯工具，以編輯出好看好讀的頁面。我目前暫時使用 Visual Studio Code。
+
+[^3]: Markdown 官方網站網址如右：<https://daringfireball.net/projects/markdown/>。另一個 Markdown Guide 網站也提供了不少實用的資訊 <https://www.markdownguide.org/>。
+
 #### 7. 進行本地端測試
 啟動 Hugo 伺服器，指令如下。針對到此的成果進行本地端測試。
 ```sh
@@ -101,7 +105,9 @@ $ hugo server -D
 >到目前為止，我們已經可以在本地端測試 Hugo 部落格。在本地端伺服器啟動的狀態下，我們修改文章頁面，或新增文章頁面，都會即時更新狀態。
 
 #### 8. 更換佈景主題
-佈景主題存放在 themes 資料夾內。可以分別存放多個佈景主題。目前本網站使用的佈景主題是 anatole，可以下達下列指令將佈景主題複製下來。
+佈景主題存放在 themes 資料夾內。可以分別存放多個佈景主題。目前本網站使用的佈景主題是 <cite>anatole[^4]</cite>，可以執行下列指令將佈景主題複製下來。
+
+[^4]: anatole 頁面網址如右：<https://themes.gohugo.io/anatole/>。
 
 ```sh
 $ git clone https://github.com/lxndrblz/anatole.git themes/anatole
@@ -117,7 +123,7 @@ theme = "anatole"
 
 最後啟動 Hugo 伺服器進行本地端測試。
 
-![screenshot](/images/site-feature-image.png "anatole")
+![screenshot](/images/tn.png "anatole")
 
 ### 二、發佈 Hugo 到 GitHub
 

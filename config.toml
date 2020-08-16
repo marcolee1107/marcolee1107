@@ -16,7 +16,7 @@ enableRobotsTXT = true
 [params]
 title = "I'm Marco Lee"
 author = "Marco Lee"
-description = "Call me Marco"
+description = "記錄一種業餘和隨性的興緻，也像是一項一項的挑戰"
 profilePicture = "images/profile.jpg"
 keywords = "blockchain, hugo"
 favicon = "favicons/"
