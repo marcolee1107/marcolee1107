@@ -1,17 +1,19 @@
 ---
-title: "我把 Hugo 部落格部署在 GitHub 上"
+title: "我把 Hugo 部署在 GitHub 上當作部落格網站"
 author: "Marco Lee"
 date: 2020-08-15T15:46:23+08:00
-description: 記錄在 GitHub 部署 Hugo 的過程
-tags: ["Hugo", "Hugo Themes", "Homebrew", "GitHub"]
+description: 記錄將 Hugo 部署在 GitHub 的過程，並學習如何編輯 Markdown 文件
+tags: ["Hugo", "Hugo Themes", "Homebrew", "git remote", "GitHub Pages"]
 ---
-我想要重新開張個人部落格，選擇了 Hugo。最大的原因是它可以直接架在 GitHub 上，而且輕盈簡潔，號稱 `"The world’s fastest framework for building websites"`。不像 Wordpress，還得為它找一個虛擬主機；儘管我比較熟悉 Wordpress，還是決定試試 Hugo。其背後隠藏的原因是... GitHub 和 Hugo 都免費。哈哈。
+*Marco Lee* - 2020.08.15
+
+我想要重新開張個人部落格，選擇了 Hugo。最大的原因是它可以直接架在 GitHub 上，而且輕盈簡潔，號稱 `"The world’s fastest framework for building websites"`。不像 Wordpress，還得為它找一個虛擬主機；儘管我使用多年並比較熟悉 Wordpress，還是決定試試 Hugo。其背後隠藏的原因是... 我是 GitHub 使用者，GitHub Pages 和 Hugo 都免費。哈哈。
 
 我使用 MacOS。部署 Hugo 到 GitHub 分為兩個部份，我處理的過程如下：
 
 ### 一、本地建立檔案
 
-#### 1. 安裝 Homebrew。
+#### 1. 安裝 Homebrew
 打開**終端機**，將下一行命令複製貼到**終端機**執行<cite>安裝[^1]</cite>。
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -123,40 +125,55 @@ theme = "anatole"
 
 最後啟動 Hugo 伺服器進行本地端測試。
 
+```sh
+$ hugo server -D
+```
+
 ![screenshot](/images/tn.png "anatole")
 
 ### 二、發佈 Hugo 到 GitHub
+由於 GitHub 提供 <cite>GitHub Pages[^5]</cite> 服務，因此可以讓註冊使用者在 GitHub 架設網站。
 
-#### 1. 在 GitHub 建立兩個 repository
-在 GitHub 建立 your-account.github.io 和 website-hugo 兩個 repository。
+[^5]: GitHub Pages 官方介紹網址如右：<https://pages.github.com/>。
+
+#### 1. 在 GitHub 建立儲存庫（repository）
+在 GitHub 建立你的 your-account.github.io 儲存庫（repository）。
 
 #### 2. 建立 public 資料夾
-我們在本地端建立的頁面，測試完畢後，需要打包到 public 資料夾，然後發佈到 GitHub。打包的方法便是下達 hugo 指令，如下：
+我們在本地端建立的頁面，測試完畢後，需要打包到 public 資料夾，然後發佈到 GitHub。打包的方法便是下達 hugo 指令，讓 Hugo 自動建立 public 資料夾並儲存打包的網站，如下：
 
 ```sh
 $ hugo
 ```
 #### 3. 將 Hugo 發佈到 GitHub 上
-將 public 資料夾發佈到 GitHub 上的 your-account.github.io。需要切換到 public 資料夾。按下列指令執行：
+此步驟是將 public 資料夾的內容發佈到 GitHub 上的 your-account.github.io 儲存庫。在操作之前先複習 git 指令：
+
+>  * **`git clone <網址>`**。下載遠端儲存庫；如下載佈景主題儲存庫。
+>  * **`git init`**。新建本地儲存庫。 
+>  * **`git remote add <遠端儲存庫簡稱> <網址>`**。加入遠端儲存庫。
+>  * **`git add .`**。加入索引。
+>  * **`git commit -m "版本標註"`**。提交版本。
+>  * **`git push <儲存庫簡稱> <分支名稱>`**。更新遠端儲存庫資料。
+
+操作時注意資料夾的切換。進入 public 資料夾，執行建立本地儲存庫：
 
 ```sh
 $ cd public
 $ git init
+```
+
+加入一個名為 origin 的遠端儲存庫，網址接在後面。
+```sh
 $ git remote add origin https://github.com/your-account/your-account.github.io.git
+```
+
+加入索引、提交版本，並更新遠端儲存庫。往後本地端資料有任何更新，透過底下指令來 push 資料即可。
+```sh
 $ git add .
 $ git commit -m "push public"
 $ git push -u origin master
 ```
 
-回到根目錄，把整個根目錄發佈到 GitHub 上的 website-hugo。按下列指令執行：
-```sh
-$ cd ..
-$ git init
-$ git remote add origin https://github.com/your-account/website-hugo.git
-$ git add .
-$ git commit -m "Initial commit"
-$ git push -u origin master
-```
-#### 4. 打開瀏覽器輸入網址 https://your-account.github.io
+### 4. 打開瀏覽器輸入網址 https://your-account.github.io
 
->大功告成
+>大功告成。底下為參考文件。

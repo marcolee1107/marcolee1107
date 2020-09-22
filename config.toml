@@ -3,7 +3,7 @@ languageCode = "zh-tw"
 DefaultContentLanguage = "tw"
 title = "Website of Marco Lee"
 theme = "anatole"
-summarylength = 10
+summarylength = 6
 enableEmoji = true
 enableRobotsTXT = true
 
@@ -16,8 +16,8 @@ enableRobotsTXT = true
 [params]
 title = "I'm Marco Lee"
 author = "Marco Lee"
-description = "記錄一種業餘和隨性的興緻，也像是一項項的挑戰"
-profilePicture = "images/profile.jpg"
+description = "漫步在業餘和隨性的興緻，也像是一項項的挑戰"
+profilePicture = "images/profile3.png"
 keywords = "blockchain, hugo"
 favicon = "favicons/"
 customCss = []
